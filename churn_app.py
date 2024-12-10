@@ -9,7 +9,7 @@ import pickle
 RFC = joblib.load('churn_model.pkl')  # Ensure the file is in the same directory
 
 # Set up the Streamlit app
-st.title("Customer Churn Prediction")
+st.title("Customer Churns Prediction")
 st.write("This application predicts whether a customer will churn based on their features.")
 def predic(state,area_code,account_length,voice_plan,voice_messages,intl_plan,
            intl_mins,intl_calls,intl_charge,day_mins,day_calls,day_charge,eve_mins
