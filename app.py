@@ -19,10 +19,22 @@ RFC = joblib.load('churn_model.pkl')  # Ensure the file is in the same directory
 st.title("Customer Churn Prediction")
 st.write("This application predicts whether a customer will churn based on their features.")
 
+file_path = "Churn (1).xlsx"  # Update with your file path
+data = pd.read_csv(file_path)
+
+# Extract unique states and area codes
+states = data["state"].unique()
+area_codes = data["area_code"].unique()
+
 # Input features for prediction
 st.header("Customer Details")
-state=st.number_input("name of state")
-area_code=st.number_input("area code")
+
+# Dropdown for state
+state = st.selectbox("Select State", options=states)
+area_code = st.selectbox("Select Area Code", options=area_codes)
+
+#state=st.file_uploader("name of state")
+#area_code=st.file_uploader("area code")
 account_length = st.number_input("Account Length (in days)", min_value=0, max_value=500, value=100)
 voice_plan=st.number_input("voice.plan")
 voice_messages = st.number_input("Number of Voice Messages", min_value=0, max_value=50, value=10)
