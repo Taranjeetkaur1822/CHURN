@@ -8,7 +8,7 @@ Original file is located at
 """
 
 import streamlit as st
-import numpy as np
+import numpy as np 
 import pandas as pd
 import joblib
 
@@ -16,7 +16,7 @@ import joblib
 RFC = joblib.load('churn_model.pkl')  # Ensure the file is in the same directory
 
 # Set up the Streamlit app
-st.title("Customer Churn Prediction")
+st.title("Customer Churns Prediction")
 st.write("This application predicts whether a customer will churn based on their features.")
 
 file_path = "Churn (1).csv"  # Update with your file path
