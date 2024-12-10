@@ -24,7 +24,7 @@ data = pd.read_csv(file_path)
 
 # Extract unique states and area codes
 states = data["state"].unique()
-area_codes = data["area_code"].unique()
+area_codes = data["area.code"].unique()
 
 # Input features for prediction
 st.header("Customer Details")
