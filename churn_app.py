@@ -3,8 +3,14 @@ import pandas as pd
 import numpy as np
 import pickle
 
-pickle_in = open('xgb_model.pkl','rb')
-xgb_model = pickle.load(pickle_in)
+#pickle_in = open('xgb_model.pkl','rb')
+#xgb_model = pickle.load(pickle_in)
+
+RFC = joblib.load('churn_model.pkl')  # Ensure the file is in the same directory
+
+# Set up the Streamlit app
+st.title("Customer Churn Prediction")
+st.write("This application predicts whether a customer will churn based on their features.")
 def predic(state,area_code,account_length,voice_plan,voice_messages,intl_plan,
            intl_mins,intl_calls,intl_charge,day_mins,day_calls,day_charge,eve_mins
            ,eve_calls,eve_charge,night_mins,night_calls,night_charge,customer_calls):
