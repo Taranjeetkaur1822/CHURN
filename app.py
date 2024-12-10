@@ -19,7 +19,7 @@ RFC = joblib.load('churn_model.pkl')  # Ensure the file is in the same directory
 st.title("Customer Churn Prediction")
 st.write("This application predicts whether a customer will churn based on their features.")
 
-file_path = "Churn (1).xlsx"  # Update with your file path
+file_path = "Churn (1).csv"  # Update with your file path
 data = pd.read_csv(file_path)
 
 # Extract unique states and area codes
