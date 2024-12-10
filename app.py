@@ -32,15 +32,12 @@ st.header("Customer Details")
 # Dropdown for state
 state = st.selectbox("Select State", options=states)
 area_code = st.selectbox("Select Area Code", options=area_codes)
+account_length = st.number_input("Account Length (in days)", min_value=0, max_value=500, value=100)
 voice_plan_input = st.selectbox("Do you have a voice plan?", ["Yes", "No"])
 voice_plan = 1 if voice_plan_input.lower() == "yes" else 0
+voice_messages = st.number_input("Number of Voice Messages", min_value=0, max_value=50, value=10)
 intl_plan_input = st.selectbox("Do you have an international plan?", ["Yes", "No"])
 intl_plan = 1 if intl_plan_input.lower() == "yes" else 0
-
-account_length = st.number_input("Account Length (in days)", min_value=0, max_value=500, value=100)
-#voice_plan=st.number_input("voice.plan")
-voice_messages = st.number_input("Number of Voice Messages", min_value=0, max_value=50, value=10)
-#intl_plan=st.number_input("intl.plan")
 intl_mins = st.number_input("International Minutes", min_value=0.0, max_value=100.0, value=10.0)
 intl_calls = st.number_input("International Calls", min_value=0, max_value=20, value=5)
 intl_charge = st.number_input("International Charges", min_value=0.0, max_value=50.0, value=5.0)
@@ -58,8 +55,8 @@ customer_calls = st.number_input("Number of Customer Service Calls", min_value=0
 # Prediction button
 if st.button("Predict Churn"):
     # Prepare the input array
-    input_data = np.array([state,area_code,
-        account_length,voice_plan, voice_messages,intl_plan, intl_mins, intl_calls, intl_charge,
+    input_data = np.array([
+        account_length, voice_messages, intl_mins, intl_calls, intl_charge,
         day_mins, day_calls, day_charge, eve_mins, eve_calls, eve_charge,
         night_mins, night_calls, night_charge, customer_calls
     ]).reshape(1, -1)
