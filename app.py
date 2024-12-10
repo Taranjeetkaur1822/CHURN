@@ -33,12 +33,13 @@ st.header("Customer Details")
 state = st.selectbox("Select State", options=states)
 area_code = st.selectbox("Select Area Code", options=area_codes)
 
-#state=st.file_uploader("name of state")
-#area_code=st.file_uploader("area code")
+voice_plan = 1 if voice_plan == "yes" else 0
+intl_plan = 1 if intl_plan == "yes" else 0
+
 account_length = st.number_input("Account Length (in days)", min_value=0, max_value=500, value=100)
-voice_plan=st.number_input("voice.plan")
+#voice_plan=st.number_input("voice.plan")
 voice_messages = st.number_input("Number of Voice Messages", min_value=0, max_value=50, value=10)
-intl_plan=st.number_input("intl.plan")
+#intl_plan=st.number_input("intl.plan")
 intl_mins = st.number_input("International Minutes", min_value=0.0, max_value=100.0, value=10.0)
 intl_calls = st.number_input("International Calls", min_value=0, max_value=20, value=5)
 intl_charge = st.number_input("International Charges", min_value=0.0, max_value=50.0, value=5.0)
