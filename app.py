@@ -32,9 +32,10 @@ st.header("Customer Details")
 # Dropdown for state
 state = st.selectbox("Select State", options=states)
 area_code = st.selectbox("Select Area Code", options=area_codes)
-
-voice_plan = 1 if voice_plan == "yes" else 0
-intl_plan = 1 if intl_plan == "yes" else 0
+voice_plan_input = st.selectbox("Do you have a voice plan?", ["Yes", "No"])
+voice_plan = 1 if voice_plan_input.lower() == "yes" else 0
+intl_plan_input = st.selectbox("Do you have an international plan?", ["Yes", "No"])
+intl_plan = 1 if intl_plan_input.lower() == "yes" else 0
 
 account_length = st.number_input("Account Length (in days)", min_value=0, max_value=500, value=100)
 #voice_plan=st.number_input("voice.plan")
